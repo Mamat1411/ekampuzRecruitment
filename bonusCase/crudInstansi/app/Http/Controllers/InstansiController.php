@@ -59,7 +59,10 @@ class InstansiController extends Controller
      */
     public function edit(Instansi $instansi)
     {
-        //
+        return view('edit',[
+            "title" => "Edit Instansi",
+            "instansi" => $instansi
+        ]);
     }
 
     /**
@@ -67,7 +70,19 @@ class InstansiController extends Controller
      */
     public function update(Request $request, Instansi $instansi)
     {
-        //
+        $request -> validate([
+            'name' => 'required',
+            'short_description' => 'required',
+            'description' => 'required'
+        ]);
+
+        Instansi::where('id', $instansi->id)->update([
+            'name' => $request->name,
+            'short_description' => $request->short_description,
+            'description' => $request->description
+        ]);
+
+        return redirect('/')->with('status', 'Data Instansi Berhasil Diubah');
     }
 
     /**

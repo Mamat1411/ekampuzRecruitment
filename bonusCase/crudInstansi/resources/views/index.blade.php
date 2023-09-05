@@ -24,7 +24,7 @@
                     <tr>
                     <th scope="row">{{ $i->id }}</th>
                     <td>
-                       <a href="" class="btn btn-success">Edit</a>
+                       <a href="/edit/{{ $i->id }}" class="btn btn-success">Edit</a>
                        <a href="/show/{{ $i->id }}" class="btn btn-primary">Detail</a>
                        <form action="/destroy/{{ $i->id }}" method="post" class="d-inline">
                             @method('delete')
