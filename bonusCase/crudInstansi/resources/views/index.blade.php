@@ -1,14 +1,21 @@
 @extends('layouts.main')
 @section('container')
     <div class="container mt-3">
-        <h1>Companies List </h1>
+        <h1 class="my-3">List Instansi</h1>
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
 
-        <table class="table table-bordered table-hover table-striped my-4">
+        <a href="/create" class="btn btn-primary">Tambah Data Instansi</a>
+
+        <table class="table table-bordered table-hover table-striped my-3">
             <thead>
               <tr>
                 <th scope="col">No</th>
                 <th scope="col">Aksi</th>
-                <th scope="col">Name</th>
+                <th scope="col">Nama</th>
                 <th scope="col">Deskripsi</th>
               </tr>
             </thead>

@@ -14,3 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'InstansiController@index');
+Route::get('/create', 'InstansiController@create');
+Route::post('/store', 'InstansiController@store');

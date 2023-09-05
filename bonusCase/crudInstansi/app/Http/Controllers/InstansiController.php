@@ -23,7 +23,9 @@ class InstansiController extends Controller
      */
     public function create()
     {
-        //
+        return view('create',[
+            "title" => "Add Company"
+        ]);
     }
 
     /**
@@ -31,7 +33,14 @@ class InstansiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request -> validate([
+            'name' => 'required',
+            'short_description' => 'required',
+            'description' => 'required'
+        ]);
+
+        Instansi::create($request->all());
+        return redirect('/')->with('status', 'Data Instansi Berhasil Ditambahkan');
     }
 
     /**
