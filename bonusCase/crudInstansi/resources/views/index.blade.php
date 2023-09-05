@@ -22,7 +22,7 @@
             <tbody>
                 @foreach ($instansi as $i)
                     <tr>
-                    <th scope="row">{{ $loop->iteration }}</th>
+                    <th scope="row">{{ $i->id }}</th>
                     <td>
                        <a href="" class="btn btn-success">Edit</a>
                        <a href="" class="btn btn-primary">Detail</a>
@@ -34,5 +34,6 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $instansi->links() }}
     </div>
 @endsection

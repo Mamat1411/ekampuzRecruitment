@@ -14,7 +14,7 @@ class InstansiController extends Controller
     {
         return view('index',[
             "title" => "Index",
-            "instansi" => Instansi::all()
+            "instansi" => Instansi::paginate(5)
         ]);
     }
 
