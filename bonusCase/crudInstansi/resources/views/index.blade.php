@@ -26,7 +26,11 @@
                     <td>
                        <a href="" class="btn btn-success">Edit</a>
                        <a href="/show/{{ $i->id }}" class="btn btn-primary">Detail</a>
-                       <a href="" class="btn btn-danger">Delete</a>
+                       <form action="/destroy/{{ $i->id }}" method="post" class="d-inline">
+                            @method('delete')
+                            @csrf
+                           <button type="submit" class="btn btn-danger">Delete</button>
+                       </form>
                     </td>
                     <td>{{ $i->name }}</td>
                     <td>{{ $i->short_description }}</td>

@@ -17,3 +17,4 @@ Route::get('/', 'InstansiController@index');
 Route::get('/create', 'InstansiController@create');
 Route::post('/store', 'InstansiController@store');
 Route::get('/show/{instansi}', 'InstansiController@show');
+Route::delete('/destroy/{instansi}', 'InstansiController@destroy');

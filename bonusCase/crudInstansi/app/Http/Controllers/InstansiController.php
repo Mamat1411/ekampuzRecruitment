@@ -75,6 +75,7 @@ class InstansiController extends Controller
      */
     public function destroy(Instansi $instansi)
     {
-        //
+        Instansi::destroy($instansi->id);
+        return redirect('/')->with('status', 'Data Instansi Berhasil Dihapus');
     }
 }
