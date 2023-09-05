@@ -12,7 +12,10 @@ class InstansiController extends Controller
      */
     public function index()
     {
-        //
+        return view('index',[
+            "title" => "Index",
+            "instansi" => Instansi::all()
+        ]);
     }
 
     /**
