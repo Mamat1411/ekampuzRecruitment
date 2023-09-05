@@ -48,7 +48,10 @@ class InstansiController extends Controller
      */
     public function show(Instansi $instansi)
     {
-        //
+        return view('show', [
+            "title" => Instansi::where('name', $instansi->name)->get(),
+            'instansi' => $instansi
+        ]);
     }
 
     /**

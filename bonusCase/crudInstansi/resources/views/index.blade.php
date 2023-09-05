@@ -25,7 +25,7 @@
                     <th scope="row">{{ $i->id }}</th>
                     <td>
                        <a href="" class="btn btn-success">Edit</a>
-                       <a href="" class="btn btn-primary">Detail</a>
+                       <a href="/show/{{ $i->id }}" class="btn btn-primary">Detail</a>
                        <a href="" class="btn btn-danger">Delete</a>
                     </td>
                     <td>{{ $i->name }}</td>
